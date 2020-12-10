@@ -14,6 +14,7 @@ from lxml import *
 import csv
 from datetime import datetime
 import time
+from multiprocessing import Pool
 
 
 
@@ -66,19 +67,31 @@ def write_csv(data):
                           data['price']))#чтобы брать информацию и записывать
         print(data['name'], 'parsed')
 
+def make_all(url):#это чисто для того чтобы передавать и вытащить информацию с страницы снизу уже через процесс это все запускается и работает
+    html = get_html(url)#первый передаем url
+    data = get_page_data(html)#потом готовый html мы пердаем на следующую функцию
+    time.sleep(5)
+    write_csv(data)#потом в этой функции записываем результат
+
+
 
 def main():
     start = datetime.now()
     url = 'https://coinmarketcap.com/all/views/all/'
     all_links = get_all_links(get_html(url))#все ссылки из которых мы будем доставать ссылки на парсинг
 
-    for index, url in enumerate(all_links):
+    # for index, url in enumerate(all_links):#индекс это номерацию ставим через  enumerate
+    #
+    #     html = get_html(url)#первый передаем url
+    #     data = get_page_data(html)#потом готовый html мы пердаем на следующую функцию
+    #     write_csv(data)#потом в этой функции записываем результат
+    #     print(index+1)
+    #     time.sleep(5)
 
-        html = get_html(url)#первый передаем url
-        data = get_page_data(html)#потом готовый html мы пердаем на следующую функцию
-        write_csv(data)#потом в этой функции записываем результат
-        print(index+1)
-        time.sleep(5)
+
+
+    with Pool(40) as p:#это нужно для того чтобы через несколько процессов парсить
+        p.map(make_all, all_links)#тут мы передаем переменные и функии сверху
 
     end = datetime.now()
 
