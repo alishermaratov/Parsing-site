@@ -6,7 +6,7 @@ from random import uniform
 
 
 
-def get_html(url, useragent=None, proxy=None ): #НУЖНО ДЛЯ ТОГО ЧТОБЫ ПОЛУЧИТЬ ССЫЛКУ
+def get_html(url, useragent=None, proxy=None): #НУЖНО ДЛЯ ТОГО ЧТОБЫ ПОЛУЧИТЬ ССЫЛКУ
     print('get_html')
     r = requests.get(url, headers = useragent, proxies=proxy )
     return r.text
