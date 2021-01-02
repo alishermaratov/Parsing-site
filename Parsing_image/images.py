@@ -11,9 +11,9 @@ import os
 #         f.write(chunk) #потом на чтения мы передаем файл chang  потомучто в этом файле все будет хранится
 
 urls = [
-    'https://www.hdwallpapers.in/thumbs/2020/large_height_green_trees_reflection_on_buttermere_lake_and_landscape_of_sand_covered_mountain_hd_nature-t2.jpg',
-    'https://www.hdwallpapers.in/thumbs/2020/lake_with_leaves_between_green_grass_covered_forest_with_reflection_during_daytime_hd_nature-t2.jpg',
-    'https://www.hdwallpapers.in/thumbs/2020/clear_view_of_under_body_of_water_in_florida_keys_4k_hd_nature-t2.jpg',
+    'https://proprikol.ru/wp-content/uploads/2020/08/kartinki-krutyh-mashin-59.jpg',
+    'https://img3.goodfon.ru/original/1024x1024/a/30/lamborghini-aventador-lp700-4-1516.jpg',
+    'http://www.fonstola.ru/download.php?file=201201/1920x1200/fonstola.ru-72240.jpg',
     'https://www.hdwallpapers.in/thumbs/2020/blue_yellow_body_of_water_between_sand_covered_mountains_and_forest_under_cloudy_blue_sky_hd_nature-t2.jpg',
     'https://www.hdwallpapers.in/thumbs/2020/beautiful_pathway_between_fence_and_garden_and_body_of_water_with_sunrays_hd_nature-t2.jpg'
 ]
